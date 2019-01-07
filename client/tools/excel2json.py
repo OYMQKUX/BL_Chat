@@ -24,8 +24,8 @@ def convert(filePath, fileName):
             for col in range(ncols):
                 key = workSheet.cell_value(FIRST_ROW, col)
                 tmp[key] = col + 1
-            result['keys'] = tmp;
-            result['rows'] = {};
+            result['keys'] = tmp
+            result['rows'] = {}
             tmp = {}
             for row in range(nrows):
                 if row <= FIRST_ROW:
@@ -34,7 +34,7 @@ def convert(filePath, fileName):
                 tmp[key] = []
                 for col in range(ncols):
                     tmp[key].append(workSheet.cell_value(row, col))
-            result['rows'] = tmp;
+            result['rows'] = tmp
         jsonData = json.dumps(result, indent=4)
         saveJson(os.path.join(OUTPUT_PATH), fileName, jsonData)
 
