@@ -13,10 +13,9 @@ def convert(filePath, fileName):
     if getData(filePath) is not None:
         data = getData(filePath)
         sheetNames = data.sheet_names()
-        print (sheetNames)
         result = {}
         for sheetName in sheetNames:
-            print ('converting sheet {0}: ', format(sheetName))
+            print ("converting sheet {0}... ".format(sheetName))
             workSheet = data.sheet_by_name(sheetName)
             nrows = workSheet.nrows
             ncols = workSheet.ncols
@@ -49,13 +48,15 @@ def getData(filePath):
         return None
 
 def saveJson(filePath, fileName, data):
-    output = codecs.open(filePath + fileName + '.json', 'w', 'utf-8')
+    name, suffix = os.path.splitext(fileName)
+    output = codecs.open(filePath + name + '.json', 'w', 'utf-8')
     output.write(data)
     output.close()
 
 if __name__ == '__main__':
-    fileName = input('check=======>')
-    filePath = INPUT_PATH + fileName
-    # data = getData(fileName)
-    # print(data)
-    convert(filePath, fileName)
+    for fileName in os.listdir(INPUT_PATH):
+        name, suffix = os.path.splitext(fileName)
+        if name.find('~$') >= 0:
+            print ('copy file no convert!!!')
+        elif suffix == '.xlsx' or suffix == '.xls':
+            convert (INPUT_PATH + fileName, fileName)
