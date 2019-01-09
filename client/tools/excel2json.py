@@ -38,7 +38,7 @@ def convert(filePath, fileName):
                 for col in range(ncols):
                     tmp[key].append(getRealValue(row, col, workSheet))
             result['rows'] = tmp
-        jsonData = json.dumps(result, indent=4)
+        jsonData = json.dumps(result, indent=4, ensure_ascii=False)
         saveJson(os.path.join(OUTPUT_PATH), fileName, jsonData)
         saveJson(os.path.join(CONFIG_PATH), fileName, jsonData)
 
@@ -49,7 +49,7 @@ def getRealValue(row, col, workSheet):
         tmpVal = int(val)
         if tmpVal == val:
             val = tmpVal
-    elif valType == TYPE_TEXT:
+    # elif valType == TYPE_TEXT:
         # val = val.encode('utf-8')
         # print (val)
     return val
@@ -65,7 +65,7 @@ def getData(filePath):
 
 def saveJson(filePath, fileName, data):
     name, suffix = os.path.splitext(fileName)
-    output = codecs.open(filePath + name + '.json', 'w', 'utf-8')
+    output = codecs.open(filePath + name + '.json', 'w', encoding='utf-8')
     output.write(data)
     output.close()
 
