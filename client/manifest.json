@@ -9,13 +9,14 @@
 		"libs/modules/promise/promise.js"
 	],
 	"game": [
+		"bin-debug/common/tables/BaseTable.js",
 		"bin-debug/AssetAdapter.js",
 		"bin-debug/LoadingUI.js",
 		"bin-debug/Main.js",
 		"bin-debug/Platform.js",
 		"bin-debug/ThemeAdapter.js",
+		"bin-debug/common/BaseClass.js",
 		"bin-debug/common/util.js",
-		"bin-debug/common/tables/BaseTable.js",
 		"bin-debug/common/tables/TestTable.js"
 	]
 }

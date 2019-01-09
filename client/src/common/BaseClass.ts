@@ -1,0 +1,5 @@
+class BaseClass {
+    public constructor() {
+        
+    }
+}

@@ -75,6 +75,7 @@ class Main extends eui.UILayer {
             await RES.loadConfig("resource/default.res.json", "resource/");
             await this.loadTheme();
             await RES.loadGroup("preload", 0, loadingView);
+            await RES.loadGroup("tables", 0, loadingView)
             this.stage.removeChild(loadingView);
         }
         catch (e) {
@@ -207,5 +208,12 @@ class Main extends eui.UILayer {
         panel.horizontalCenter = 0;
         panel.verticalCenter = 0;
         this.addChild(panel);
+        let table = new TestTable();
+        for (let i = 0; i < 7; ++i) {
+            console.log(table.getName(i));
+            console.log(table.getStar(i));
+            console.log(table.getSkill(i));
+        }
+        console.log(table.getName(2))
     }
 }

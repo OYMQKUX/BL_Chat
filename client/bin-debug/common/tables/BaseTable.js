@@ -7,6 +7,17 @@ var BaseTable = (function () {
         // super();
         this.tableJson = RES.getRes(tableName);
     }
+    BaseTable.prototype.getNumber = function (id, val) {
+        var pos = this.tableJson['keys'][val];
+        return Number(this.tableJson['rows'][id][pos]);
+    };
+    BaseTable.prototype.getString = function (id, val) {
+        return String(this.getNumber(id, val));
+    };
+    BaseTable.prototype.split = function (id, val, c) {
+        var tmpVal = this.getString(id, val);
+        return tmpVal.split(c);
+    };
     return BaseTable;
 }());
 __reflect(BaseTable.prototype, "BaseTable");
