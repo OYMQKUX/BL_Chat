@@ -209,7 +209,7 @@ class Main extends eui.UILayer {
         panel.verticalCenter = 0;
         this.addChild(panel);
         let table = new TestTable();
-        for (let i = 0; i < 7; ++i) {
+        for (let i = 1; i <= 7; ++i) {
             console.log(table.getName(i));
             console.log(table.getStar(i));
             console.log(table.getSkill(i));
