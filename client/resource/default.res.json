@@ -7,6 +7,10 @@
 		{
 			"keys": "test_json",
 			"name": "tables"
+		},
+		{
+			"keys": "messages_proto",
+			"name": "proto"
 		}
 	],
 	"resources": [
@@ -144,6 +148,11 @@
 			"url": "config/tables/test.json",
 			"type": "json",
 			"name": "test_json"
+		},
+		{
+			"url": "proto/messages.proto",
+			"type": "bin",
+			"name": "messages_proto"
 		}
 	]
 }

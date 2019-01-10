@@ -76,6 +76,7 @@ class Main extends eui.UILayer {
             await this.loadTheme();
             await RES.loadGroup("preload", 0, loadingView);
             await RES.loadGroup("tables", 0, loadingView)
+            await RES.loadGroup("proto", 0, loadingView)
             this.stage.removeChild(loadingView);
         }
         catch (e) {
