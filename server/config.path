@@ -1,6 +1,7 @@
 root = "./../server/"
 skynet_root = "./"
+pbc_root="./../pbc/binding/lua53/"
 lualoader = skynet_root.."lualib/loader.lua"
 luaservice = root.."service/?.lua;"..skynet_root.."service/?.lua;"..root.."?.lua;"
-lua_cpath = skynet_root.."luaclib/?.so"
+lua_cpath = skynet_root.."luaclib/?.so;"..pbc_root.."?.so"
 lua_path = skynet_root.."lualib/?.lua;"..skynet_root.."lualib/?/init.lua"
