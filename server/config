@@ -3,7 +3,7 @@ include "config.path"
 -- preload = "./examples/preload.lua"	-- run preload.lua before every lua service run
 thread = 8
 logger = nil
-logpath = "."
+logpath = "./log"
 harbor = 1
 address = "127.0.0.1:2526"
 master = "127.0.0.1:2013"
@@ -11,5 +11,9 @@ start = "main"	-- main script
 bootstrap = "snlua bootstrap"	-- The service for bootstrap
 standalone = "0.0.0.0:2013"
 -- snax_interface_g = "snax_g"
-cpath = root.."cservice/?.so"
+cpath = skynet_root.."cservice/?.so"
 -- daemon = "./skynet.pid"
+
+-- for socket listen addr(ip:port)
+listen_addr = "127.0.0.1:1997"
+
