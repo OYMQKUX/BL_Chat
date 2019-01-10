@@ -1,11 +1,8 @@
 include "config.path"
 
-skynet_root = "../skynet/"
-root = "./"
 -- preload = "./examples/preload.lua"	-- run preload.lua before every lua service run
 thread = 8
--- logger = nil
-logger = "err.log"
+logger = nil
 logpath = "./log"
 harbor = 1
 address = "127.0.0.1:2526"
@@ -17,7 +14,6 @@ standalone = "0.0.0.0:2013"
 cpath = skynet_root.."cservice/?.so"
 -- daemon = "./skynet.pid"
 
-lualoader = skynet_root.."lualib/loader.lua"
-luaservice = root.."service/*.lua;"..skynet_root.."service/*.lua"
-lua_cpath = skynet_root.."luaclib/*.so"
-lua_path = skynet_root.."lualib/?.lua;"..skynet_root.."lualib/?/init.lua"
+-- for socket listen addr(ip:port)
+listen_addr = "127.0.0.1:1997"
+
