@@ -5,8 +5,11 @@ import codecs
 
 INPUT_PATH = "../excel/"
 OUTPUT_PATH = "../excel/json_tables/"
+CONFIG_PATH = "../resource/config/tables/"
 FIRST_ROW = 1 ##row 0 as appendix
-FIRST_COL = 1
+FIRST_COL = 0
+TYPE_TEXT = 1;
+TYPE_NUMBER = 2;
 
 def convert(filePath, fileName):
     print ('converting: ', filePath)
@@ -21,7 +24,7 @@ def convert(filePath, fileName):
             ncols = workSheet.ncols
             tmp = {}
             for col in range(ncols):
-                key = workSheet.cell_value(FIRST_ROW, col)
+                key = getRealValue(FIRST_ROW, col, workSheet)
                 tmp[key] = col + 1
             result['keys'] = tmp
             result['rows'] = {}
@@ -29,14 +32,27 @@ def convert(filePath, fileName):
             for row in range(nrows):
                 if row <= FIRST_ROW:
                     continue
-                key = workSheet.cell_value(row, FIRST_COL)
+                key = getRealValue(row, FIRST_COL, workSheet)
+                print (key)
                 tmp[key] = []
                 for col in range(ncols):
-                    tmp[key].append(workSheet.cell_value(row, col))
+                    tmp[key].append(getRealValue(row, col, workSheet))
             result['rows'] = tmp
-        jsonData = json.dumps(result, indent=4)
+        jsonData = json.dumps(result, indent=4, ensure_ascii=False)
         saveJson(os.path.join(OUTPUT_PATH), fileName, jsonData)
+        saveJson(os.path.join(CONFIG_PATH), fileName, jsonData)
 
+def getRealValue(row, col, workSheet):
+    val = workSheet.cell_value(row, col)
+    valType = workSheet.cell_type(row, col)
+    if valType == TYPE_NUMBER:
+        tmpVal = int(val)
+        if tmpVal == val:
+            val = tmpVal
+    # elif valType == TYPE_TEXT:
+        # val = val.encode('utf-8')
+        # print (val)
+    return val
 
 def getData(filePath):
     try:
@@ -49,7 +65,7 @@ def getData(filePath):
 
 def saveJson(filePath, fileName, data):
     name, suffix = os.path.splitext(fileName)
-    output = codecs.open(filePath + name + '.json', 'w', 'utf-8')
+    output = codecs.open(filePath + name + '.json', 'w', encoding='utf-8')
     output.write(data)
     output.close()
 
