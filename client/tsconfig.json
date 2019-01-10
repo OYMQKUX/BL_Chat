@@ -13,6 +13,6 @@
 		"include": [
 				"src",
 				"libs",
-				"protobuf/**/*.d.ts"
+				"libraries"
 		]
 }
