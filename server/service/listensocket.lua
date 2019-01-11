@@ -21,7 +21,7 @@ function listen_connect()
   while not stop do
     local socket_id = skynet.listen(addr)
     assert(socket_id)
-    skynet.newservice(agent_name)
+    skynet.newservice(agent_name, socket_id)
   end
 end
 
