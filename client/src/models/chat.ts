@@ -18,4 +18,12 @@ class Chat extends BaseModel{
     public register() {
         // this.registerEvent()
     }
+
+    public sendMsg(msg: string) {
+        
+    }
+
+    public checkValid(msg: string) {
+        
+    }
 }

@@ -1,4 +1,9 @@
 //1
+message log {
+	required int32 mid = 1;
+	required string user_name = 2;
+	required string password = 3;
+}
 message login {
   required int32 mid = 1;
   required string user_name = 2;
