@@ -3,13 +3,13 @@ class ChatUI extends eui.Component {
     private textInp: eui.TextInput;
     public constructor(params) {
         super();
-        this.skinName = "MainUI.exml"
+        this.skinName = "resource/skins/MainUI.exml"
     }
 
     protected createChildren() {
         super.createChildren();
         this.layout();
-        this.registerEvent();
+        // this.registerEvent();
     }
 
     private layout() {

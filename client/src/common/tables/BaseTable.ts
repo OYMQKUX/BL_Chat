@@ -6,12 +6,12 @@ class BaseTable{
     }
 
     public getNumber(id, val): number {
-        let pos = this.tableJson['keys'][val];
-        return Number(this.tableJson['rows'][id][pos]);
+        return Number(this.getString(id, val));
     }
 
     public getString(id, val): string {
-        return String(this.getNumber(id, val));
+        let pos = this.tableJson['keys'][val];
+        return this.tableJson['rows'][id][pos];
     }
 
     public split(id, val, c): string[] {

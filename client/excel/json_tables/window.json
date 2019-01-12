@@ -1,0 +1,14 @@
+{
+    "keys": {
+        "name": 0,
+        "class": 1,
+        "level": 2
+    },
+    "rows": {
+        "ChatUI": [
+            "ChatUI",
+            "ChatUI",
+            1
+        ]
+    }
+}

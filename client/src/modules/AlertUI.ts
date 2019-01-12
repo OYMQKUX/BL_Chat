@@ -11,5 +11,11 @@ class AlertUI extends eui.Component {
         this.registerEvent();
     }
 
+    private layout() {
 
+    }
+
+    private registerEvent() {
+        
+    }
 }

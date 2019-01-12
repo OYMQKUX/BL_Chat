@@ -25,7 +25,7 @@ def convert(filePath, fileName):
             tmp = {}
             for col in range(ncols):
                 key = getRealValue(FIRST_ROW, col, workSheet)
-                tmp[key] = col + 1
+                tmp[key] = col
             result['keys'] = tmp
             result['rows'] = {}
             tmp = {}

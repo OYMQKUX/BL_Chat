@@ -5,7 +5,7 @@
 			"name": "preload"
 		},
 		{
-			"keys": "test_json",
+			"keys": "test_json,window_json",
 			"name": "tables"
 		},
 		{
@@ -153,6 +153,11 @@
 			"url": "proto/messages.proto",
 			"type": "bin",
 			"name": "messages_proto"
+		},
+		{
+			"url": "config/tables/window.json",
+			"type": "json",
+			"name": "window_json"
 		}
 	]
 }

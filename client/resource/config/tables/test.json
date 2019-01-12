@@ -1,9 +1,9 @@
 {
     "keys": {
-        "id": 1,
-        "name": 2,
-        "star": 3,
-        "skill": 4
+        "id": 0,
+        "name": 1,
+        "star": 2,
+        "skill": 3
     },
     "rows": {
         "1": [

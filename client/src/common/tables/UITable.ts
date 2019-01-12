@@ -1,5 +1,7 @@
 class UITable extends BaseTable {
     public static INSTANCE: UITable;
+    private UIMap = {string: Object};
+    private UIName = [];
     public constructor() {
         super('window_json');
     }
@@ -17,5 +19,9 @@ class UITable extends BaseTable {
 
     public getLevel(name: string) {
         return this.getNumber(name, 'level');
+    }
+
+    public getClass(name: string) {
+        return this.getString(name, 'class');
     }
 }

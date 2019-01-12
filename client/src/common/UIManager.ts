@@ -51,5 +51,6 @@ class UIManager {
 
     public getInstance(name: string) {
         //根据名字创建实例
+        return window[name];
     }
 }
